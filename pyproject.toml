@@ -2,7 +2,7 @@
 name = "fastapi-celery-example"
 version = "0.1.0"
 description = ""
-authors = ["lidong293 <lidong310@jd.com>"]
+authors = ["little7Li <little7xiaoqi@163.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
