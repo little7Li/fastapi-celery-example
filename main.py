@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/env python
 """Fastapi celery example."""
+import os
 import random
 import time
 
@@ -11,11 +12,19 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-celery_app = Celery(
-    "worker",
-    broker="redis://localhost:6379/0",
-    backend="redis://localhost:6379/1",
-)
+
+if not bool(os.getenv("DOCKER")):  # running example without docker
+    celery_app = Celery(
+        "worker",
+        broker="redis://localhost:6379/0",
+        backend="redis://localhost:6379/1",
+    )
+else:  # running example with docker
+    celery_app = Celery(
+        "worker",
+        broker="redis://redis:6379/0",
+        backend="redis://redis:6379/1",
+    )
 
 
 @celery_app.task(bind=True)

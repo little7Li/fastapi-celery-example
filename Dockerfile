@@ -16,5 +16,6 @@ ENV PIP_TRUSTED_HOST=pypi.tuna.tsinghua.edu.cn
 RUN poetry install --no-root --no-dev
 
 ENV PORT 8000
+ENV DOCKER=true
 
 COPY main.py index.html ./

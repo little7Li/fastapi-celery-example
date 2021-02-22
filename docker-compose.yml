@@ -5,7 +5,14 @@ services:
     image: "redis:6.0"
     ports:
       - "6379:6379"
+
   fastapi:
     build: .
     ports:
       - "8000:8000"
+
+  worker:
+    build: .
+    depends_on:
+      - redis
+    command: "poetry run celery -A main.celery_app worker --loglevel=info"
