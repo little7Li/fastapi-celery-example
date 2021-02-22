@@ -6,9 +6,11 @@ This repository implements the second example of [flask-celery-example](https://
 Quick Start
 -----------
 ### Run with docker-compose
-Just one-line command ```docker-compose up -d```to start up the redis, Fastapi server and our worker.
-And just go to http://localhost:8000/ to try our application!
+Just one-line command ```docker-compose up -d```to start up the redis, Fastapi server, flower and our worker.
 
+Then just go to http://localhost:8000/ to try our application!
+
+And monitor the execution of celery tasks by flower through http://localhost:5555 !
 ### Run without docker
 
 1. Clone this repository.
