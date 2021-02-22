@@ -1,4 +1,7 @@
-# fastapi-celery-example
+Using Celery with FastAPI
+========
+
+This repository implements the second example of [flask-celery-example](https://github.com/miguelgrinberg/flask-celery-example.git) with FastAPI.
 
 Quick Start
 -----------
