@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  redis:
+    image: "redis:6.0"
+    ports:
+      - "6379:6379"
+  fastapi:
+    build: .
+    ports:
+      - "8000:8000"
