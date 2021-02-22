@@ -9,5 +9,5 @@ Quick Start
     `celery -A main.celery_app worker --loglevel=info`
     - on windows OS:
     `celery -A main.celery_app worker --pool=solo --loglevel=info`
-4. Start Celery Flower to monitor. `celery -A main flower`
+4. Start Celery Flower to monitor. `celery -A main.celery_app flower`
 5. Start the Fastapi web server. `poetry run python main.py`
