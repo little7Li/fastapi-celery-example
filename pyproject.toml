@@ -9,6 +9,7 @@ python = "^3.8"
 fastapi = "^0.63.0"
 celery = "^5.0.5"
 uvicorn = "^0.13.3"
+redis = "^3.5.3"
 
 [tool.poetry.dev-dependencies]
 
