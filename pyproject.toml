@@ -12,6 +12,7 @@ uvicorn = "^0.13.3"
 redis = "^3.5.3"
 
 [tool.poetry.dev-dependencies]
+unittest = "^0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
