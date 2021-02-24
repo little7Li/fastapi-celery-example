@@ -43,14 +43,14 @@ def long_task(self):
                           meta={
                               "current": i,
                               "total": total,
-                              "status": message
+                              "status": message,
                           })
         time.sleep(1)
     return {
         "current": 100,
         "total": 100,
         "status": "Task completed!",
-        "result": 42
+        "result": 42,
     }
 
 
@@ -60,7 +60,7 @@ def index():
     return HTMLResponse(open("index.html", "r", encoding="utf8").read())
 
 
-@app.post("/longtask")
+@app.post("/longtask", status_code=202)
 def longtask(request: Request, response: Response):
     """Accept long running task."""
     task = long_task.apply_async()
@@ -78,14 +78,14 @@ def taskstatus(task_id):
             "state": task.state,
             "current": 0,
             "total": 1,
-            "status": "Pending..."
+            "status": "Pending...",
         }
     elif task.state != "FAILURE":
         response = {
             "state": task.state,
             "current": task.info.get("current", 0),
             "total": task.info.get("total", 1),
-            "status": task.info.get("status", "")
+            "status": task.info.get("status", ""),
         }
         if "result" in task.info:
             response["result"] = task.info["result"]
