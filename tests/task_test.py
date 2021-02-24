@@ -14,3 +14,10 @@ class TestTasks(TestCase):
         """Test for long task."""
         task = long_task.s().apply()
         self.assertEqual(task.status, "SUCCESS")
+        self.assertEqual(
+            task.info, {
+                "current": 100,
+                "total": 100,
+                "status": "Task completed!",
+                "result": 42,
+            })
