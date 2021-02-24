@@ -12,11 +12,10 @@ services:
       - "8000:8000"
 
   worker:
-    build: .
+    build: ./celery_app/
     depends_on:
       - redis
-    command: "poetry run celery -A main.celery_app worker --loglevel=info"
-  
+
   flower:
     image: "mher/flower:0.9.7"
     ports:

@@ -19,3 +19,4 @@ ENV PORT 8000
 ENV DOCKER=true
 
 COPY main.py index.html ./
+COPY celery_app ./celery_app/
