@@ -10,9 +10,6 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 
 COPY pyproject.toml poetry.lock ./
 
-ENV PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple/
-ENV PIP_TRUSTED_HOST=pypi.tuna.tsinghua.edu.cn
-
 RUN poetry install --no-root --no-dev
 
 ENV PORT 8000
