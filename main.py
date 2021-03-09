@@ -13,7 +13,7 @@ app = FastAPI()
 @app.get("/")
 def index():
     """Entry of the service."""
-    return HTMLResponse(open("index.html", "r", encoding="utf8").read())
+    return HTMLResponse(open("index.html").read())
 
 
 @app.post("/longtask", status_code=202)
